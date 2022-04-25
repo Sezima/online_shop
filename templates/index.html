@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title> Онлайн магазин </title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="card-deck mb-3 text-center">
+{% for i in data %}
+ <div class="card mb-4 shadow-sm">
+   <div class="card-header">
+            <h1 class="card-title pricing-card-title">{{ i.title }}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li> {{ i.price }} </li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Купить</button>
+ </div>
+</div>
+</div>
+</div>
+
+{% endfor %}
+  </div>
+{% endblock %}
