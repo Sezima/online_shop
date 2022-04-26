@@ -5,24 +5,33 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-<div class="card-deck mb-3 text-center">
-{% for i in data %}
- <div class="card mb-4 shadow-sm">
-   <div class="card-header">
-            <h1 class="card-title pricing-card-title">{{ i.title }}</h1>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+          {% for i in data %}
+        <div class="card mb-4 rounded-3 shadow-sm">
+
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ i.title }}</h4>
+          </div>
+
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ i.price }}<small class="text-muted fw-light">/сом</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li> {{ i.price }} </li>
+
               <li>2 GB of storage</li>
               <li>Email support</li>
               <li>Help center access</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Купить</button>
- </div>
-</div>
-</div>
-</div>
+            <a href="/buy/{{ i.id }}" type="button" class="w-100 btn btn-lg btn-outline-primary">купить</a>
+          </div>
+
+        </div>
+
+      </div>
 
 {% endfor %}
   </div>
 {% endblock %}
+
+
+
